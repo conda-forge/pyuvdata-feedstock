@@ -17,14 +17,14 @@ build:
 
 requirements:
   build:
-    - six>=1.10
+    - six >=1.10
     - astropy >=2.0
     - numpy >=1.14
     - python
     - scipy
     - setuptools
   run:
-    - six>=1.10
+    - six >=1.10
     - astropy >=2.0
     - numpy >=1.14
     - python
