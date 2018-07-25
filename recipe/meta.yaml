@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.3" %}
-{% set sha256 = "e7a103b6fcc36ee56b658c1497b9b62446babcab4730993c99064dcc654451f5" %}
+{% set version = "1.3.1" %}
+{% set sha256 = "71f2b56b7301d2158a31231673001de69406c8014996400093dcae45b3ef574f" %}
 
 package:
   name: {{ name }}
@@ -12,24 +12,27 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=files.txt
-  skip: true  # [win or py3k]
+  script: python -m pip install --no-deps --ignore-installed .
+  skip: true  # [win]
 
 requirements:
   build:
-    - aipy >=2.1.6
-    - astropy >=1.2
-    - numpy >=1.11
-    - pyephem
-    - python <3
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - six >=1.10
+    - astropy >=2.0
+    # we require at least numpy 1.14 in pyuvdata
+    - numpy 1.14.*
+    - pip
+    - python
     - scipy
     - setuptools
   run:
-    - aipy >=2.1.6
-    - astropy >=1.2
-    - numpy >=1.11
-    - pyephem
-    - python <3
+    - six >=1.10
+    - astropy >=2.0
+    - {{ pin_compatible('numpy') }}
+    - python
     - scipy
 
 test:
@@ -37,17 +40,18 @@ test:
     - healpy
     - nose
     - python-casacore
+    - h5py
   imports:
     - pyuvdata
   commands:
     - nosetests pyuvdata
 
 about:
-  home: https://github.com/HERA-Team/pyuvdata
+  home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
   license: BSD 2-clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Reading and writing interferometric data sets.'
+  summary: 'an interface for astronomical interferometeric datasets in python'
 
 extra:
   recipe-maintainers:

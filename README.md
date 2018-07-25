@@ -1,13 +1,13 @@
 About pyuvdata
 ==============
 
-Home: https://github.com/HERA-Team/pyuvdata
+Home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
 
 Package license: BSD 2-clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Reading and writing interferometric data sets.
+Summary: an interface for astronomical interferometeric datasets in python
 
 
 
