@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: true  # [win]
 
@@ -24,8 +24,7 @@ requirements:
   host:
     - six >=1.10
     - astropy >=2.0
-    # we require at least numpy 1.14 in pyuvdata
-    - numpy 1.14.*
+    - numpy >=1.14.*  # pyuvdata requires this
     - pip
     - python
     - scipy
