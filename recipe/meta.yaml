@@ -38,6 +38,7 @@ requirements:
 
 test:
   requires:
+    - git
     - healpy
     - nose
     - python-casacore
