@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.3.5" %}
-{% set sha256 = "62e5cf5ec202e46a38f43a695075d72560ec9a07ec93497a488c538b309b3386" %}
+{% set version = "1.3.6" %}
+{% set sha256 = "5492850440108883fa7a8e83172dac2b8378cb0963e862ee62f80627ef3754e5" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: true  # [win]
 
@@ -38,6 +38,7 @@ requirements:
 
 test:
   requires:
+    - git
     - healpy
     - nose
     - python-casacore
