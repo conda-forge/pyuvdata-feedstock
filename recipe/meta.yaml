@@ -43,6 +43,7 @@ test:
     - nose
     - python-casacore
     - h5py
+    - pyyaml
   imports:
     - pyuvdata
   commands:
