@@ -24,7 +24,7 @@ requirements:
   host:
     - six >=1.10
     - astropy >=2.0
-    - numpy >=1.14.*  # pyuvdata requires this
+    - numpy >=1.15.*  # pyuvdata requires this
     - pip
     - python
     - scipy
