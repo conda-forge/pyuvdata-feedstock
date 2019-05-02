@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.3.7" %}
-{% set sha256 = "6c0d5ea019b719a94db4e8700d4973a3038d33cf6179698d045d3ec01c7a0a26" %}
+{% set version = "1.3.8" %}
+{% set sha256 = "ec3aa1b9ce35666c12415529ce7a010511427e43d77e848a215cc6603afab7b8" %}
 
 package:
   name: {{ name }}
@@ -24,7 +24,7 @@ requirements:
   host:
     - six >=1.10
     - astropy >=2.0
-    - numpy >=1.14.*  # pyuvdata requires this
+    - numpy >=1.15.*  # pyuvdata requires this
     - pip
     - python
     - scipy
