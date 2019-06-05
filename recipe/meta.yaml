@@ -29,6 +29,7 @@ requirements:
     - python
     - scipy
     - setuptools
+    - pytest-runner
   run:
     - six >=1.10
     - astropy >=2.0
