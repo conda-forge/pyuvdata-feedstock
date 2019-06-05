@@ -48,7 +48,7 @@ test:
   imports:
     - pyuvdata
   commands:
-    - pytest
+    - pytest --pyargs pyuvdata
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
