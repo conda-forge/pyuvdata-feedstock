@@ -40,14 +40,14 @@ test:
   requires:
     - git
     - healpy
-    - nose
+    - pytest
     - python-casacore
     - h5py
     - pyyaml
   imports:
     - pyuvdata
   commands:
-    - nosetests pyuvdata
+    - pytest pyuvdata
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
