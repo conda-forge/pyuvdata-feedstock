@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.3.8" %}
-{% set sha256 = "ec3aa1b9ce35666c12415529ce7a010511427e43d77e848a215cc6603afab7b8" %}
+{% set version = "1.4.0" %}
+{% set sha256 = "0e9c6874a9d944caeb1a9adcfab86c1639ab821525dbb4e2ed35ab46a7c4dfb2" %}
 
 package:
   name: {{ name }}
@@ -29,6 +29,7 @@ requirements:
     - python
     - scipy
     - setuptools
+    - pytest-runner
   run:
     - six >=1.10
     - astropy >=2.0
@@ -40,14 +41,14 @@ test:
   requires:
     - git
     - healpy
-    - nose
+    - pytest
     - python-casacore
     - h5py
     - pyyaml
   imports:
     - pyuvdata
   commands:
-    - nosetests pyuvdata
+    - pytest --pyargs pyuvdata
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
