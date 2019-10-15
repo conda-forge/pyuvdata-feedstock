@@ -25,6 +25,7 @@ requirements:
     - six >=1.10
     - astropy >=2.0
     - numpy >=1.15.*  # pyuvdata requires this
+    - h5py
     - pip
     - python
     - scipy
@@ -36,6 +37,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
+    - h5py
 
 test:
   requires:
@@ -43,7 +45,6 @@ test:
     - healpy
     - pytest
     - python-casacore
-    - h5py
     - pyyaml
   imports:
     - pyuvdata
