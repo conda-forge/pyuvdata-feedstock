@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - six >=1.10
-    - astropy >=2.0
+    - astropy >=2.0.16
     - numpy >=1.15.*  # pyuvdata requires this
     - h5py
     - pip
@@ -33,7 +33,7 @@ requirements:
     - pytest-runner
   run:
     - six >=1.10
-    - astropy >=2.0
+    - astropy >=2.0.0.16
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
