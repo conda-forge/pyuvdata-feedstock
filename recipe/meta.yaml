@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.4.2" %}
-{% set sha256 = "cfbfa155ad396fe40f07915213081b9593463ad947f6c37a486b9c06a9ec8175" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "12e7734799e55b05712ad8d3aa38f5cc75b4a17feb417133bd3fd0f252996df5" %}
 
 package:
   name: {{ name }}
@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - six >=1.10
-    - astropy >=2.0
+    - astropy >=2.0.16
     - numpy >=1.15.*  # pyuvdata requires this
     - h5py
     - pip
@@ -33,7 +33,7 @@ requirements:
     - pytest-runner
   run:
     - six >=1.10
-    - astropy >=2.0
+    - astropy >=2.0.16
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
@@ -42,7 +42,7 @@ requirements:
 test:
   requires:
     - git
-    - healpy
+    - astropy-healpix
     - pytest
     - python-casacore
     - pyyaml
