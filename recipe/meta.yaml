@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "1.5.0" %}
-{% set sha256 = "12e7734799e55b05712ad8d3aa38f5cc75b4a17feb417133bd3fd0f252996df5" %}
+{% set version = "2.0.0" %}
+{% set sha256 = "e7f806b7c4d3b883c45f737995f36bd6f1aa51f3ebbfd88c18ca736a96cdaf49" %}
 
 package:
   name: {{ name }}
@@ -15,25 +15,24 @@ source:
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: true  # [win]
+  skip: true  # [win or py<=35]]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - six >=1.10
-    - astropy >=2.0.16
+    - astropy >=3.2.3
     - numpy >=1.15.*  # pyuvdata requires this
     - h5py
     - pip
     - python
     - scipy
     - setuptools
+    - setuptools_scm
     - pytest-runner
   run:
-    - six >=1.10
-    - astropy >=2.0.16
+    - astropy >=3.2.3
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
