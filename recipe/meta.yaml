@@ -15,7 +15,7 @@ source:
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: true  # [win]
+  skip: true  # [win and py<=35]]
 
 requirements:
   build:
