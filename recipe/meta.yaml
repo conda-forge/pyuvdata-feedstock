@@ -22,18 +22,17 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - six >=1.10
-    - astropy >=2.0.16
+    - astropy >=3.2.3
     - numpy >=1.15.*  # pyuvdata requires this
     - h5py
     - pip
     - python
     - scipy
     - setuptools
+    - setuptools_scm
     - pytest-runner
   run:
-    - six >=1.10
-    - astropy >=2.0.16
+    - astropy >=3.2.3
     - {{ pin_compatible('numpy') }}
     - python
     - scipy
