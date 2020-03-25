@@ -1,10 +1,10 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.0.0" %}
-{% set sha256 = "e7f806b7c4d3b883c45f737995f36bd6f1aa51f3ebbfd88c18ca736a96cdaf49" %}
+{% set version = "2.0.1" %}
+{% set sha256 = "2d26511b6f2aeab49ee2c15478ca2970d497b152f400305f514b970553d3ade0" %}
 
 package:
   name: {{ name }}
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win or py<=35]]
 
 requirements:
@@ -52,10 +52,10 @@ test:
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
-  license: BSD 2-clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'an interface for astronomical interferometeric datasets in python'
+  summary: an interface for astronomical interferometeric datasets in python
 
 extra:
   recipe-maintainers:
