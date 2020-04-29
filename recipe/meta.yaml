@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.0.1" %}
-{% set sha256 = "2d26511b6f2aeab49ee2c15478ca2970d497b152f400305f514b970553d3ade0" %}
+{% set version = "2.0.2" %}
+{% set sha256 = "084a1dc3c383f7663a2be169c70a7587a071310f5594d95f988b501eb82159e8" %}
 
 package:
   name: {{ name }}
@@ -14,7 +14,8 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script:
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win or py<=35]]
 
 requirements:
@@ -23,6 +24,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - astropy >=3.2.3
+    - cython
     - numpy >=1.15.*  # pyuvdata requires this
     - h5py
     - pip
@@ -37,6 +39,7 @@ requirements:
     - python
     - scipy
     - h5py
+    - setuptools_scm
 
 test:
   requires:
@@ -45,6 +48,7 @@ test:
     - pytest
     - python-casacore
     - pyyaml
+    - setuptools_scm
   imports:
     - pyuvdata
   commands:
