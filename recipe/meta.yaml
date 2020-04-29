@@ -14,7 +14,10 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script:
+    # Add a setup.py bdist_wheel call for setuptools_scm per https://github.com/pypa/setuptools_scm/issues/280
+    - {{ PYTHON }} setup.py bdist_wheel --dist-dir=dist
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [win or py<=35]]
 
 requirements:
