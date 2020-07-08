@@ -16,7 +16,7 @@ build:
   number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [win or py<=35]]
+  skip: true  # [py<=35]]
 
 requirements:
   build:
@@ -46,7 +46,7 @@ test:
     - git
     - astropy-healpix
     - pytest
-    - python-casacore
+    - pytest-cases>=1.12.1
     - pyyaml
     - setuptools_scm
   imports:
@@ -60,6 +60,8 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: an interface for astronomical interferometeric datasets in python
+  doc_url: https://pyuvdata.readthedocs.io
+  dev_url: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
 
 extra:
   recipe-maintainers:
