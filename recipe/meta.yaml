@@ -46,7 +46,6 @@ test:
     - git
     - astropy-healpix
     - pytest
-    - pytest-cases>=1.12.1
     - pyyaml
     - setuptools_scm
   imports:
