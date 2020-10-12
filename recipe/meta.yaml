@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "94ce08ac9fa4bcf3f57d8da90e3edf0b91bebbca2243c1b3f8ebd918eec2278c" %}
+{% set version = "2.1.2" %}
+{% set sha256 = "18daf0ea57ceab5ee7a86544ee54b4817bed17ddc771d27aeb1a902d61ac5fe9" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=35]]
@@ -51,7 +51,7 @@ test:
   imports:
     - pyuvdata
   commands:
-    - pytest --pyargs pyuvdata
+    - pytest -vv -s --pyargs pyuvdata
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata

@@ -5,11 +5,13 @@ Home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyuvdata-feedstock/blob/master/LICENSE.txt)
 
 Summary: an interface for astronomical interferometeric datasets in python
 
+Development: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
 
+Documentation: https://pyuvdata.readthedocs.io
 
 Current build status
 ====================
