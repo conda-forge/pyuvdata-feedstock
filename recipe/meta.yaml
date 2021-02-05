@@ -24,7 +24,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - astropy >=3.2.3
-    - cython
+    - cython >=0.23
     - numpy >=1.18.*  # pyuvdata requires this
     - h5py
     - pip
@@ -45,7 +45,11 @@ test:
   requires:
     - git
     - astropy-healpix
-    - pytest
+    - cython >=0.23
+    - pytest >=6.2
+    - pytest-cases >=3
+    - pytest-xdist
+    - python-casacore
     - pyyaml
     - setuptools_scm
   imports:
