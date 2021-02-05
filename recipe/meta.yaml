@@ -49,7 +49,7 @@ test:
     - pytest >=6.2
     - pytest-cases >=3
     - pytest-xdist
-    - python-casacore
+    - python-casacore  # [not win]
     - pyyaml
     - setuptools_scm
   imports:
