@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.2.0" %}
-{% set sha256 = "07910a57324b23f74063f492bddac5c0ec11d37e98228094351640e12e81f876" %}
+{% set version = "2.2.1" %}
+{% set sha256 = "681e3ae219e086e0a838aa0cf45f31264cf958648a290672fa4a1c196d3599e6" %}
 
 package:
   name: {{ name }}
