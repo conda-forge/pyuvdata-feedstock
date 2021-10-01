@@ -28,7 +28,7 @@ requirements:
     - h5py
     - numpy >=1.18.*  # pyuvdata requires this
     - pip
-    - pyerfa>=2.0
+    - pyerfa >=2.0
     - pytest-runner
     - python
     - scipy
@@ -38,7 +38,7 @@ requirements:
     - astropy >=4.2.1
     - h5py
     - {{ pin_compatible('numpy') }}
-    - pyerfa>=2.0
+    - pyerfa >=2.0
     - python
     - scipy
     - setuptools_scm
