@@ -25,7 +25,7 @@ requirements:
   host:
     - astropy >=4.2.1
     - cython >=0.23
-    - h5py
+    - h5py >=3.0
     - numpy >=1.18.*  # pyuvdata requires this
     - pip
     - pyerfa >=2.0
@@ -36,7 +36,7 @@ requirements:
     - setuptools_scm
   run:
     - astropy >=4.2.1
-    - h5py
+    - h5py >=3.0
     - {{ pin_compatible('numpy') }}
     - pyerfa >=2.0
     - python
@@ -47,7 +47,7 @@ test:
   requires:  # novas and novas_de405 are not included because they aren't on conda
     - git
     - astropy-healpix
-    - astroquery
+    - astroquery >=0.4.4
     - cython >=0.23
     - pytest >=6.2
     - pytest-cases >=3
