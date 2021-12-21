@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.2.4" %}
-{% set sha256 = "1bf75e5466a4bf4e9e76e20cead25f9b2ca80fc8c5fec20f2cfc03222ff9a317" %}
+{% set version = "2.2.5" %}
+{% set sha256 = "d2171aa9468c615b49401cc125849c75d44b89cf723b033073a62112918b1360" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=36]]
@@ -25,7 +25,7 @@ requirements:
   host:
     - astropy >=4.2.1
     - cython >=0.23
-    - h5py
+    - h5py >=3.0
     - numpy >=1.18.*  # pyuvdata requires this
     - pip
     - pyerfa >=2.0
@@ -36,7 +36,7 @@ requirements:
     - setuptools_scm
   run:
     - astropy >=4.2.1
-    - h5py
+    - h5py >=3.0
     - {{ pin_compatible('numpy') }}
     - pyerfa >=2.0
     - python
@@ -47,7 +47,7 @@ test:
   requires:  # novas and novas_de405 are not included because they aren't on conda
     - git
     - astropy-healpix
-    - astroquery
+    - astroquery >=0.4.4
     - cython >=0.23
     - pytest >=6.2
     - pytest-cases >=3
