@@ -71,5 +71,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - plaplant
     - bhazelton
     - pkgw
