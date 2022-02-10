@@ -50,7 +50,7 @@ test:
     - astroquery >=0.4.4
     - cython >=0.23
     - pytest >=6.2
-    - pytest-cases >=3
+    - pytest-cases >=3.6.9
     - pytest-xdist
     - python-casacore  # [not win]
     - pyyaml
