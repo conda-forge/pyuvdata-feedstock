@@ -218,4 +218,5 @@ Feedstock Maintainers
 
 * [@bhazelton](https://github.com/bhazelton/)
 * [@pkgw](https://github.com/pkgw/)
+* [@plaplant](https://github.com/plaplant/)
 
