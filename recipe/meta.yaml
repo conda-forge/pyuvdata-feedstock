@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.2.6" %}
-{% set sha256 = "220d3282dcdaab52360c25f3be5b47da8ea37e64b12e8796bbdd71a7f74e1a59" %}
+{% set version = "2.2.7" %}
+{% set sha256 = "450e4ea655073d0b44748cd198ea28305023a16aa1e9d5ea5008ddab866ac868" %}
 
 package:
   name: {{ name }}
@@ -50,7 +50,7 @@ test:
     - astroquery >=0.4.4
     - cython >=0.23
     - pytest >=6.2
-    - pytest-cases >=3
+    - pytest-cases >=3.6.9
     - pytest-xdist
     - python-casacore  # [not win]
     - pyyaml
