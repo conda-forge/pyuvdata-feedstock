@@ -23,14 +23,14 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=1.18.*                         # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - astropy >=4.2.1
     - cython >=0.23
     - h5py >=3.0
-    - numpy
+    - numpy >=1.18.*  # pyuvdata requires this
     - pip
     - pyerfa >=2.0
     - pytest-runner
