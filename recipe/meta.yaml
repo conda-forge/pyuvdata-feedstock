@@ -30,7 +30,7 @@ requirements:
     - astropy >=4.2.1
     - cython >=0.23
     - h5py >=3.0
-    - numpy >=1.18.*  # pyuvdata requires this
+    - numpy
     - pip
     - pyerfa >=2.0
     - pytest-runner
