@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=37]]
@@ -23,14 +23,14 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy >=1.19.*                         # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - astropy >=5.0.4
     - cython >=0.23
     - h5py >=3.0
-    - numpy >=1.19.*  # pyuvdata requires this
+    - numpy  # pyuvdata needs >=1.19
     - pip
     - pyerfa >=2.0
     - pytest-runner
