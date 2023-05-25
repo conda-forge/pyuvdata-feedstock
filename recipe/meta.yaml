@@ -29,6 +29,7 @@ requirements:
   host:
     - astropy >=5.0.4
     - cython >=0.23
+    - docstring_parser >= 0.15
     - h5py >=3.1
     - numpy  # pyuvdata needs >=1.20
     - pip
@@ -40,6 +41,7 @@ requirements:
     - setuptools_scm <7.0|>=7.0.3
   run:
     - astropy >=5.0.4
+    - docstring_parser >= 0.15
     - h5py >=3.1
     - {{ pin_compatible('numpy') }}
     - pyerfa >=2.0
