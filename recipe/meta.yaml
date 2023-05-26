@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.3.2" %}
-{% set sha256 = "2cae3fa6db28618d40736d80e2d323b13a21207773d2a50181de866862cef3d8" %}
+{% set version = "2.3.3" %}
+{% set sha256 = "66a7af16606afdeb2f4c4d1f7ede02ed4f27aa7c11bf91b02bdc22351d99daf4" %}
 
 package:
   name: {{ name }}
@@ -29,6 +29,7 @@ requirements:
   host:
     - astropy >=5.0.4
     - cython >=0.23
+    - docstring_parser >=0.15
     - h5py >=3.1
     - numpy  # pyuvdata needs >=1.20
     - pip
@@ -40,6 +41,7 @@ requirements:
     - setuptools_scm <7.0|>=7.0.3
   run:
     - astropy >=5.0.4
+    - docstring_parser >=0.15
     - h5py >=3.1
     - {{ pin_compatible('numpy') }}
     - pyerfa >=2.0
