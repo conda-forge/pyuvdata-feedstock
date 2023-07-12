@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.3.3" %}
-{% set sha256 = "66a7af16606afdeb2f4c4d1f7ede02ed4f27aa7c11bf91b02bdc22351d99daf4" %}
+{% set version = "2.4.0" %}
+{% set sha256 = "1bce8bef758c4bd221708601de7f84bb861925204e8e1e8f6c6599603eb0c059" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - warnings.patch
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=37]]
