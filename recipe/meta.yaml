@@ -58,7 +58,7 @@ test:
     - pytest >=6.2
     - pytest-cases >=3.6.9
     - pytest-xdist
-    - python-casacore >=3.3  # [not win and py<3.11]
+    - python-casacore >=3.3  # [not win and py<311]
     - pyyaml >=5.1
     - setuptools_scm <7.0|>=7.0.3
   imports:
