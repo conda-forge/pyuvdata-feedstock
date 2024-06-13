@@ -26,6 +26,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - astropy >=6.0
     - cython >=3.0
