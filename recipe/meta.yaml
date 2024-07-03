@@ -58,10 +58,12 @@ test:
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
     - pyyaml >=5.4.1
+  source_files:
+    tests
   imports:
     - pyuvdata
   commands:
-    - pytest -vv -s --pyargs pyuvdata
+    - pytest -vv -s tests
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
