@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "2.4.5" %}
-{% set sha256 = "31934f3611557d25e010b123c26d4ce1a8a9c1145df1e8d5adcebab3409ca6f1" %}
+{% set version = "3.0.0" %}
+{% set sha256 = "25cc7c1500d8a46134bbd597b7f82f1bd78131d08ef9eb30e695dfe341ee0c59" %}
 
 package:
   name: {{ name }}
@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - warnings.patch
 
 build:
   number: 0
@@ -36,17 +34,17 @@ requirements:
     - pip
     - pyerfa >=2.0.1.1
     - python
-    - scipy >=1.7.3
-    - setuptools >=61
-    - setuptools_scm <7.0|>=7.0.3
+    - scipy >=1.8
+    - setuptools >=64
+    - setuptools_scm >=8.1
   run:
     - astropy >=6.0
     - docstring_parser >=0.15
     - h5py >=3.4
     - pyerfa >=2.0.1.1
     - python
-    - scipy >=1.7.3
-    - setuptools_scm <7.0|>=7.0.3
+    - scipy >=1.8
+    - setuptools_scm >=8.1
 
 test:
   requires:  # lunarsky, novas, and novas_de405 are not included because they aren't on conda
@@ -60,11 +58,12 @@ test:
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
     - pyyaml >=5.4.1
-    - setuptools_scm <7.0|>=7.0.3
+  source_files:
+    tests
   imports:
     - pyuvdata
   commands:
-    - pytest -vv -s --pyargs pyuvdata
+    - pytest -vv -s tests
 
 about:
   home: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
