@@ -53,7 +53,7 @@ test:
     - astroquery >=0.4.4
     - hdf5plugin >= 3.2.0
     - cython >=3.0
-    - pytest >=6.2.5
+    - pytest >=8.2
     - pytest-cases >=3.8.3
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
