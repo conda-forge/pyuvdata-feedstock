@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "25cc7c1500d8a46134bbd597b7f82f1bd78131d08ef9eb30e695dfe341ee0c59" %}
+{% set version = "3.1.0" %}
+{% set sha256 = "0205b56af6ce271342cdd22ae11832a0dcdf24eb71d98337c1df49e7cba66022" %}
 
 package:
   name: {{ name }}
@@ -58,8 +58,7 @@ test:
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
     - pyyaml >=5.4.1
-  source_files:
-    tests
+  source_files: tests
   imports:
     - pyuvdata
   commands:
