@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "25cc7c1500d8a46134bbd597b7f82f1bd78131d08ef9eb30e695dfe341ee0c59" %}
+{% set version = "3.1.1" %}
+{% set sha256 = "5c8d88330038fdec3216446a10a34e5dfa84f4363504a7094e4062ed3df41271" %}
 
 package:
   name: {{ name }}
@@ -53,13 +53,12 @@ test:
     - astroquery >=0.4.4
     - hdf5plugin >= 3.2.0
     - cython >=3.0
-    - pytest >=6.2.5
+    - pytest >=8.2
     - pytest-cases >=3.8.3
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
     - pyyaml >=5.4.1
-  source_files:
-    tests
+  source_files: tests
   imports:
     - pyuvdata
   commands:
