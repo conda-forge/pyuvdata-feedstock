@@ -1,17 +1,17 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.1.1" %}
-{% set sha256 = "5c8d88330038fdec3216446a10a34e5dfa84f4363504a7094e4062ed3df41271" %}
+{% set version = "3.1.2" %}
+{% set sha256 = "4942e54d89f13be1a09f1f82c60a2c429c68eb8f8c504c97616e9b1e8a3dfaa6" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=39]]
