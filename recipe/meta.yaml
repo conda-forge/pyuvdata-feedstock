@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.2.1" %}
-{% set sha256 = "e4d6655d021fd95a1fa358834e15adf5cf55a0df0611f4e7bb765e6a9bde2b49" %}
+{% set version = "3.2.2" %}
+{% set sha256 = "a25586b9178a2e0c9fd4ef64f557419d23b80342ef1e3cda2746c9efa35fde93" %}
 
 package:
   name: {{ name }}
@@ -14,13 +14,14 @@ build:
   number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [py<=39]]
+  skip: true  # [py<=310]]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
+    - numba                                  # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -29,34 +30,41 @@ requirements:
     - astropy-base >=6.0
     - cython >=3.0
     - docstring_parser >=0.15
-    - h5py >=3.4
+    - h5py >=3.7
+    - numba >=0.57.0
     - numpy  # pyuvdata needs >=1.23
     - pip
-    - pyyaml >=5.4.1
     - pyerfa >=2.0.1.1
     - python
-    - scipy >=1.8
+    - pyyaml >=5.4.1
+    - scipy >=1.9
     - setuptools >=64
     - setuptools_scm >=8.1
   run:
     - astropy-base >=6.0
     - docstring_parser >=0.15
-    - h5py >=3.4
-    - pyyaml >=5.4.1
+    - h5py >=3.7
+    - numba >=0.57.0
     - pyerfa >=2.0.1.1
     - python
-    - scipy >=1.8
+    - pyyaml >=5.4.1
+    - scipy >=1.9
     - setuptools_scm >=8.1
+  run_constrained:  # use this to limit versions of optional dependencies
+    - astropy-healpix >=1.0.2
+    - astroquery >=0.4.4
+    - hdf5plugin >=3.3.1
+    - python-casacore >=3.5.2
 
 test:
   requires:  # lunarsky, novas, and novas_de405 are not included because they aren't on conda
     - git
     - astropy-healpix >=1.0.2
     - astroquery >=0.4.4
-    - hdf5plugin >=3.2.0
+    - hdf5plugin >=3.3.1
     - cython >=3.0
     - pytest >=8.2
-    - pytest-cases >=3.8.3
+    - pytest-cases >=3.9.1
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
   source_files: tests
