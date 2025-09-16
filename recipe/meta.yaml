@@ -63,7 +63,8 @@ test:
     - astroquery >=0.4.4
     - hdf5plugin >=3.3.1
     - cython >=3.0
-    - pooch
+    - matplotlib >=3.7
+    - pooch >=1.8
     - pytest >=8.2
     - pytest-cases >=3.9.1
     - pytest-xdist
