@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.2.3" %}
-{% set sha256 = "3ef430cdb4e0049eca7176f3271b08354093752185aa6461d264f40a284d3e3f" %}
+{% set version = "3.2.4" %}
+{% set sha256 = "efeb571baa8d028dfed4ab8bfcfd68670e0a457b4552d3b3f0671549b7a0a108" %}
 
 package:
   name: {{ name }}
@@ -63,6 +63,8 @@ test:
     - astroquery >=0.4.4
     - hdf5plugin >=3.3.1
     - cython >=3.0
+    - matplotlib >=3.7
+    - pooch >=1.8
     - pytest >=8.2
     - pytest-cases >=3.9.1
     - pytest-xdist
