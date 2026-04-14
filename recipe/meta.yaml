@@ -1,6 +1,6 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.2.5" %}
-{% set sha256 = "74563731e71d3a115051ed8b71d40d3860bcaab7caef5ad3dfce9c871b63d089" %}
+{% set version = "3.2.6" %}
+{% set sha256 = "94eca423e0a2ee8bfe41638d4c3e80af6d367ba81ee767264f03f5a368fe7fa6" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py<=310]]
