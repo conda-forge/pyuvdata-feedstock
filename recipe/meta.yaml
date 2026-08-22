@@ -1,13 +1,13 @@
 {% set name = "pyuvdata" %}
-{% set version = "3.2.6" %}
-{% set sha256 = "94eca423e0a2ee8bfe41638d4c3e80af6d367ba81ee767264f03f5a368fe7fa6" %}
+{% set version = "3.2.7" %}
+{% set sha256 = "b451f9c3c64f5da4c989eb0f055e6c30cd8447fec319056c2749eddd09f1b670" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
