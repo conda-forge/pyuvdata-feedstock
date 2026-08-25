@@ -65,7 +65,7 @@ test:
     - cython >=3.0
     - matplotlib >=3.7
     - pooch >=1.8
-    - pytest >=8.2
+    - pytest <9.1  # 2026-08-24: pytest-cases needs this; should be fixed soon
     - pytest-cases >=3.9.1
     - pytest-xdist
     - python-casacore >=3.5.2  # [not win]
