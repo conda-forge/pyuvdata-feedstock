@@ -1,0 +1,108 @@
+schema_version: 1
+
+context:
+  name: pyuvdata
+  version: "3.2.8"
+  sha256: 34f9f134d77a374d5c0c1b14a3e75790a5eaa0d7ae9cfac6b84003d8a70a7343
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+
+build:
+  number: 0
+  skip:
+    - ${{ python <= "3.10" }}
+  script:
+    env:
+      CYTHON_FORCE_REGEN: "1"
+    content: |
+      ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cython
+    - if: build_platform != target_platform
+      then: numba
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  host:
+    - astropy-base >=6.0
+    - cython >=3.0
+    - docstring_parser >=0.15
+    - h5py >=3.7
+    - numba >=0.57.0
+    - numpy  # pyuvdata needs >=1.23
+    - pip
+    - pyerfa >=2.0.1.1
+    - python
+    - pyyaml >=5.4.1
+    - scipy >=1.9
+    - setuptools >=64
+    - setuptools_scm >=8.1
+  run:
+    - astropy-base >=6.0
+    - docstring_parser >=0.15
+    - h5py >=3.7
+    - numba >=0.57.0
+    - pyerfa >=2.0.1.1
+    - python
+    - pyyaml >=5.4.1
+    - scipy >=1.9
+    - setuptools_scm >=8.1
+  run_constraints:
+    - astropy-healpix >=1.0.2
+    - astroquery >=0.4.4
+    - hdf5plugin >=3.3.1
+    - python-casacore >=3.5.2
+
+tests:
+  - python:
+      imports:
+        - pyuvdata
+      pip_check: false
+  - files:
+      source: 
+        - tests
+    requirements:
+      run:
+        - git
+        - astropy-healpix >=1.0.2
+        - astroquery >=0.4.4
+        - hdf5plugin >=3.3.1
+        - cython >=3.0
+        - matplotlib >=3.7
+        - pooch >=1.8
+        - pytest <9.1
+        - pytest-cases >=3.9.1
+        - pytest-xdist
+        - python-casacore >=3.5.2
+    script:
+      - pytest -vv -s tests
+
+about:
+  license: BSD-2-Clause
+  license_file: LICENSE
+  summary: an interface for astronomical interferometeric datasets in python
+  homepage: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
+  repository: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
+  documentation: https://pyuvdata.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - plaplant
+    - bhazelton
+    - pkgw
+
