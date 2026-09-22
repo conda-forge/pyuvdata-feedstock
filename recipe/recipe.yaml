@@ -16,7 +16,7 @@ source:
 build:
   number: 0
   skip:
-    - ${{ python <= "3.10" }}
+    - ${{ match(python, "<=3.10") }}
   script:
     env:
       CYTHON_FORCE_REGEN: "1"
@@ -88,7 +88,9 @@ tests:
         - pytest <9.1
         - pytest-cases >=3.9.1
         - pytest-xdist
-        - python-casacore >=3.5.2
+        - if: not win
+          then:
+            - python-casacore >=3.5.2
     script:
       - pytest -vv -s tests
 
@@ -105,4 +107,3 @@ extra:
     - plaplant
     - bhazelton
     - pkgw
-
