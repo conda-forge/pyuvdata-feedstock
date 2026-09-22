@@ -11,7 +11,7 @@ Summary: an interface for astronomical interferometeric datasets in python
 
 Development: https://github.com/RadioAstronomySoftwareGroup/pyuvdata
 
-Documentation: https://pyuvdata.readthedocs.io
+Documentation: https://pyuvdata.readthedocs.io/
 
 Current build status
 ====================
