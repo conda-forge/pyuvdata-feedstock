@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: pyuvdata
-  version: "3.2.8"
-  sha256: 34f9f134d77a374d5c0c1b14a3e75790a5eaa0d7ae9cfac6b84003d8a70a7343
+  version: "3.2.9"
+  sha256: b6457a8b8b799509a70a7168f0ae5f3cdec833b114c7211fcb4acf26b952fe9f
 
 package:
   name: ${{ name }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip:
     - ${{ match(python, "<=3.10") }}
   script:
@@ -26,15 +26,12 @@ build:
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: cython
-    - if: build_platform != target_platform
-      then: numba
-    - if: build_platform != target_platform
-      then: numpy
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython
+        - numba
+        - numpy
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
@@ -49,7 +46,7 @@ requirements:
     - pyerfa >=2.0.1.1
     - python
     - pyyaml >=5.4.1
-    - scipy >=1.9
+    - scipy >=1.15
     - setuptools >=64
     - setuptools_scm >=8.1
   run:
@@ -60,7 +57,7 @@ requirements:
     - pyerfa >=2.0.1.1
     - python
     - pyyaml >=5.4.1
-    - scipy >=1.9
+    - scipy >=1.15
     - setuptools_scm >=8.1
   run_constraints:
     - astropy-healpix >=1.0.2
