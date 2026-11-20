@@ -49,7 +49,7 @@ requirements:
     - pyerfa >=2.0.1.1
     - python
     - pyyaml >=5.4.1
-    - scipy >=1.9
+    - scipy >=1.15
     - setuptools >=64
     - setuptools_scm >=8.1
   run:
@@ -60,7 +60,7 @@ requirements:
     - pyerfa >=2.0.1.1
     - python
     - pyyaml >=5.4.1
-    - scipy >=1.9
+    - scipy >=1.15
     - setuptools_scm >=8.1
   run_constraints:
     - astropy-healpix >=1.0.2
